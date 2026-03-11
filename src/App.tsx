@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './index.css';
 import type { Persona, PainPathway, FocusArea, Competitor } from './types';
+import PasswordGate from './components/PasswordGate';
 import Header from './components/Header';
 import BreadcrumbBar from './components/BreadcrumbBar';
 import PersonaSelector from './components/PersonaSelector';
@@ -13,11 +14,16 @@ import ObjectionHotBar from './components/ObjectionHotBar';
 import { functionalityData } from './data';
 
 export default function App() {
+  const [unlocked, setUnlocked] = useState(() => localStorage.getItem('gwcb_auth') === '1');
   const [selectedPersona, setSelectedPersona] = useState<Persona>('Code Enforcement Officer');
   const [selectedPainPathway, setSelectedPainPathway] = useState<PainPathway | null>(null);
   const [selectedFocusArea, setSelectedFocusArea] = useState<FocusArea | null>(null);
   const [selectedCompetitor, setSelectedCompetitor] = useState<Competitor | null>(null);
   const [activeObjection, setActiveObjection] = useState<string | null>(null);
+
+  if (!unlocked) {
+    return <PasswordGate onUnlock={() => setUnlocked(true)} />;
+  }
 
   // Reset: clears everything downstream of persona
   const handleReset = () => {
