@@ -16,7 +16,7 @@ export default function Header({ onReset }: HeaderProps) {
         >
           GovWell
         </span>
-        <span className="text-lg">🦆</span>
+        <img src="/bd-repo/mascot.png" alt="GovWell mascot" className="w-7 h-7 object-contain" />
         <span className="text-gray-700 font-medium text-sm">Cold Call Builder</span>
       </div>
 
