@@ -38,7 +38,7 @@ export default function PasswordGate({ onUnlock }: PasswordGateProps) {
           >
             GovWell
           </span>
-          <img src="/bd-repo/mascot.png" alt="GovWell mascot" className="w-7 h-7 object-contain" />
+          <img src="/bd-repo/mascot.png" alt="GovWell mascot" className="w-5 h-5 object-contain" />
           <span className="text-gray-700 font-medium text-sm">Cold Call Builder</span>
         </div>
 
