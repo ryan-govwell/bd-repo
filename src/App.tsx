@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import './index.css';
 import type { Persona, PainPathway, FocusArea, Competitor } from './types';
 import PasswordGate from './components/PasswordGate';
@@ -10,8 +10,9 @@ import FocusAreaSelector from './components/FocusAreaSelector';
 import GoalBanner from './components/GoalBanner';
 import QuestionsAndValueProps from './components/QuestionsAndValueProps';
 import CompetitorDiscovery from './components/CompetitorDiscovery';
+import ValuePropHotBar from './components/ValuePropHotBar';
 import ObjectionHotBar from './components/ObjectionHotBar';
-import { functionalityData } from './data';
+import { functionalityData, objectionData, valuePropData } from './data';
 
 export default function App() {
   const [unlocked, setUnlocked] = useState(() => localStorage.getItem('gwcb_auth') === '1');
@@ -20,20 +21,44 @@ export default function App() {
   const [selectedFocusArea, setSelectedFocusArea] = useState<FocusArea | null>(null);
   const [selectedCompetitor, setSelectedCompetitor] = useState<Competitor | null>(null);
   const [activeObjection, setActiveObjection] = useState<string | null>(null);
+  const [activeValueProp, setActiveValueProp] = useState<string | null>(null);
+  const bottomBarsRef = useRef<HTMLDivElement>(null);
+
+  // Close popups when clicking outside the bottom bar container
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (bottomBarsRef.current && !bottomBarsRef.current.contains(e.target as Node)) {
+        setActiveObjection(null);
+        setActiveValueProp(null);
+      }
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  // Derive active popup content
+  const activePopup = useMemo(() => {
+    if (activeObjection) {
+      const obj = objectionData.find((o) => o.label === activeObjection);
+      if (obj) return { type: 'objection' as const, title: obj.label, lines: obj.lines };
+    }
+    if (activeValueProp) {
+      const vp = valuePropData.find((v) => v.buttonLabel === activeValueProp);
+      if (vp) return { type: 'vp' as const, title: vp.popupTitle, lines: [vp.description] };
+    }
+    return null;
+  }, [activeObjection, activeValueProp]);
 
   if (!unlocked) {
     return <PasswordGate onUnlock={() => setUnlocked(true)} />;
   }
 
-  // Reset: clears everything downstream of persona
   const handleReset = () => {
     setSelectedPainPathway(null);
     setSelectedFocusArea(null);
     setSelectedCompetitor(null);
-    setActiveObjection(null);
   };
 
-  // Persona change resets downstream
   const handlePersonaChange = (p: Persona) => {
     setSelectedPersona(p);
     setSelectedPainPathway(null);
@@ -48,7 +73,13 @@ export default function App() {
   };
 
   const handleObjectionToggle = (label: string) => {
+    setActiveValueProp(null);
     setActiveObjection((prev) => (prev === label ? null : label));
+  };
+
+  const handleValuePropToggle = (label: string) => {
+    setActiveObjection(null);
+    setActiveValueProp((prev) => (prev === label ? null : label));
   };
 
   const goalText =
@@ -69,9 +100,8 @@ export default function App() {
       {/* Scrollable main content */}
       <div
         className="mx-auto px-4"
-        style={{ maxWidth: '660px', paddingTop: '64px', paddingBottom: '160px' }}
+        style={{ maxWidth: '660px', paddingTop: '64px', paddingBottom: '260px' }}
       >
-        {/* Breadcrumb */}
         <BreadcrumbBar
           persona={selectedPersona}
           painPathway={selectedPainPathway}
@@ -80,13 +110,8 @@ export default function App() {
         />
 
         <div className="flex flex-col gap-3 mt-1">
-          {/* Step 1: Persona */}
-          <PersonaSelector
-            selected={selectedPersona}
-            onChange={handlePersonaChange}
-          />
+          <PersonaSelector selected={selectedPersona} onChange={handlePersonaChange} />
 
-          {/* Step 2: Pain Pathway */}
           <PainPathwaySelector
             selected={selectedPainPathway}
             competitor={selectedCompetitor}
@@ -94,7 +119,6 @@ export default function App() {
             onSelectCompetitor={setSelectedCompetitor}
           />
 
-          {/* Step 3: Focus Area (Functionality Pain only) */}
           {selectedPainPathway === 'Functionality Pain' && (
             <FocusAreaSelector
               persona={selectedPersona}
@@ -103,10 +127,8 @@ export default function App() {
             />
           )}
 
-          {/* Goal Banner */}
           {goalText && <GoalBanner goal={goalText} />}
 
-          {/* Questions & Value Props */}
           {showFunctionalityContent && (
             <QuestionsAndValueProps
               persona={selectedPersona}
@@ -114,18 +136,45 @@ export default function App() {
             />
           )}
 
-          {/* Competitor Discovery */}
           {showCompetitorContent && (
             <CompetitorDiscovery competitor={selectedCompetitor!} />
           )}
         </div>
       </div>
 
-      {/* Sticky objection bar */}
-      <ObjectionHotBar
-        activeObjection={activeObjection}
-        onToggle={handleObjectionToggle}
-      />
+      {/* Fixed bottom bars container */}
+      <div
+        ref={bottomBarsRef}
+        style={{ borderTop: '2px solid #C0392B' }}
+        className="fixed bottom-0 left-0 right-0 z-50 bg-white"
+      >
+        {/* Shared popup — renders above the bars */}
+        {activePopup && (
+          <div
+            style={{
+              border: '1px solid #E8E0E0',
+              bottom: '100%',
+              marginBottom: '6px',
+            }}
+            className="absolute left-4 right-4 bg-white rounded-lg px-4 py-3 shadow-lg"
+          >
+            <p
+              style={{ color: activePopup.type === 'objection' ? '#C0392B' : '#1E6E43' }}
+              className="text-xs font-bold uppercase tracking-wide mb-2"
+            >
+              {activePopup.title}
+            </p>
+            {activePopup.lines.map((line, i) => (
+              <p key={i} className="text-sm text-gray-700 leading-relaxed">
+                {line}
+              </p>
+            ))}
+          </div>
+        )}
+
+        <ValuePropHotBar activeVP={activeValueProp} onToggle={handleValuePropToggle} />
+        <ObjectionHotBar activeObjection={activeObjection} onToggle={handleObjectionToggle} />
+      </div>
     </div>
   );
 }

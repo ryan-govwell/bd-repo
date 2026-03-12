@@ -1,4 +1,4 @@
-import type { PersonaFocusAreas, CompetitorQuestion, ObjectionResponse } from './types';
+import type { PersonaFocusAreas, CompetitorQuestion, ObjectionResponse, ValuePropItem } from './types';
 
 // ─── FUNCTIONALITY PAIN DATA ───────────────────────────────────────────────
 
@@ -13,10 +13,10 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'How do complaints come in today — calls, email, online form, or in person?',
           vpTitle: 'Simple, resident-facing portal',
           vpDescription:
-            'Structured fields for address, violation type, details, and photos so staff isn\'t chasing info across emails/voicemails/paper.',
+            "Structured fields for address, violation type, details, and photos so staff isn't chasing info across emails/voicemails/paper.",
         },
         {
-          question: 'When something comes in, how do you log it and make sure it doesn\'t get lost?',
+          question: "When something comes in, how do you log it and make sure it doesn't get lost?",
           vpTitle: 'Clean complaint → case workflow',
           vpDescription:
             'Once a complaint comes in, GovWell drops it straight into a step-by-step workflow so your team can triage and resolve it fast — no manual sorting.',
@@ -31,7 +31,7 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'On a busy week, how do you decide what gets handled first?',
           vpTitle: 'Standardized statuses',
           vpDescription:
-            '(Submitted → Open → Case Created → Closed) so everyone can instantly understand where each item stands and what\'s next.',
+            "(Submitted → Open → Case Created → Closed) so everyone can instantly understand where each item stands and what's next.",
         },
       ],
     },
@@ -41,19 +41,19 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
       goal: 'Uncover double work.',
       qvpPairs: [
         {
-          question: 'When you\'re in the field, how are you capturing photos and notes?',
+          question: "When you're in the field, how are you capturing photos and notes?",
           vpTitle: 'Mobile-friendly field inspections',
           vpDescription:
             'Log inspection outcomes and notes while on-site instead of writing in a notebook and updating later.',
         },
         {
-          question: 'When you\'re scheduling inspections, what do you use to keep track of what you need to do each day?',
+          question: "When you're scheduling inspections, what do you use to keep track of what you need to do each day?",
           vpTitle: 'Daily inspection queue & calendar integration',
           vpDescription:
             'Automatically schedule and route inspections to yourself and staff across systems and calendars.',
         },
         {
-          question: 'Do you have to upload everything later when you\'re back at your desk?',
+          question: "Do you have to upload everything later when you're back at your desk?",
           vpTitle: 'Photo documentation in the workflow',
           vpDescription:
             'Capture/upload photos tied to the complaint / case for evidence and communication.',
@@ -72,7 +72,7 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
       goal: 'Uncover where cases stall.',
       qvpPairs: [
         {
-          question: 'When you\'re ready to send a notice, how do you generate it — template, copy/paste, from scratch?',
+          question: "When you're ready to send a notice, how do you generate it — template, copy/paste, from scratch?",
           vpTitle: 'Automatic notice generation',
           vpDescription:
             'GovWell generates notices from violation-type templates with property, owner, and codebook info auto-filled.',
@@ -87,7 +87,7 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'How do you keep track of when a case needs a re-inspection or next step?',
           vpTitle: 'Automated follow-up prompts',
           vpDescription:
-            'GovWell surfaces re-inspection due dates and next steps so cases don\'t go cold.',
+            "GovWell surfaces re-inspection due dates and next steps so cases don't go cold.",
         },
         {
           question: 'If a case ends up going to court, how do you pull together everything you need — timeline, photos, notices, and notes?',
@@ -109,25 +109,25 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'How are permit applications coming in today — online, email, paper, or a mix?',
           vpTitle: 'Centralized application intake',
           vpDescription:
-            'GovWell gives you one place where every application goes, so nothing gets lost in email or paperwork.',
+            'GovWell gives you one place where every application goes right on the website, so nothing gets lost in email or paperwork.',
         },
         {
           question: 'Do applicants typically submit everything correctly the first time, or is it a lot of back-and-forth?',
           vpTitle: 'Guided applicant submissions',
           vpDescription:
-            'GovWell helps people submit it right the first time with an AI-powered chatbot that lives on the portal to answer questions, plus a feature called AutoCheck that flags if anything is missing before they hit submit.',
+            'GovWell helps people submit it right the first time with an AI-powered chatbot that lives on the portal to answer questions. AICA, as we call it, will allow residents to ask questions like "how do I build a shed" and get direct answers. Plus we have a feature called AutoCheck that cross-references plan sets with your code and flags any problems before applicants submit.',
         },
         {
           question: 'How do you communicate with applicants and let them know what they need to do?',
           vpTitle: 'Clear applicant communication',
           vpDescription:
-            'GovWell makes it easy to tell applicants exactly what\'s missing and where to upload it, without long email chains.',
+            "GovWell makes it easy to tell applicants exactly what's missing and where to upload it, without long email chains.",
         },
         {
           question: 'Are you able to immediately attach permit applications to a specific workflow to keep the process moving?',
           vpTitle: 'Automatic workflow routing',
           vpDescription:
-            'GovWell automatically puts each application into the right step-by-step process, so it keeps moving without someone having to sort it manually.',
+            "GovWell automatically puts each application into the right step-by-step process, so it keeps moving without someone having to sort it manually.",
         },
       ],
     },
@@ -140,22 +140,22 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'How do you coordinate plan review across multiple departments or reviewers?',
           vpTitle: 'Multi-department review routing',
           vpDescription:
-            'GovWell routes plans to the right reviewers automatically and tracks who\'s reviewed, who\'s pending, and what\'s outstanding.',
+            "GovWell routes plans to the right reviewers automatically and tracks who's reviewed, who's pending, and what's outstanding.",
         },
         {
           question: 'How do reviewers mark up or comment on plans?',
           vpTitle: 'Digital plan markup',
           vpDescription:
-            'Reviewers can annotate directly in GovWell, keeping all comments in one place instead of scattered across emails.',
+            'The applicant gets notified, fixes the issues, and uploads the new version right back into the same case. Everything stays attached to the permit record, so nothing gets lost in email, and everything is easily searchable in the system.',
         },
         {
           question: 'When a plan needs to be resubmitted, how do you track what changed?',
           vpTitle: 'Version-tracked resubmittals',
           vpDescription:
-            'Each resubmittal is logged so you can see what changed and whether all comments were addressed.',
+            'You can quickly tell what changed between the old set and the new set. There is a button that allows you to toggle between the two versions and overlay the old set with the new to see changes. Staff always knows which plan and version is current.',
         },
         {
-          question: 'How do you know when a review is complete and it\'s ready to move forward?',
+          question: "How do you know when a review is complete and it's ready to move forward?",
           vpTitle: 'Approval status tracking',
           vpDescription:
             'GovWell shows you exactly which reviewers have signed off so nothing advances prematurely.',
@@ -171,25 +171,25 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'How do contractors request inspections, and how do you schedule them?',
           vpTitle: 'Self-serve inspection scheduling',
           vpDescription:
-            'Contractors can request inspections through the portal and GovWell routes them automatically to the right inspector.',
+            "Scheduling is simple. Staff and applicants request and book inspections in one place online, and appointments automatically populate to GovWell's mobile app. When in the field you can schedule further inspections or re-inspections and they automatically sync with your calendar.",
         },
         {
           question: 'How do inspectors document results in the field?',
-          vpTitle: 'Mobile inspection app',
+          vpTitle: 'Correction & reinspection tracking',
           vpDescription:
-            'Inspectors pass/fail, add notes, and attach photos on their phone — no clipboard or double-entry.',
+            "GovWell has a mobile app that allows you to easily record notes and photos right on the inspection, so everything ends up automatically saved to the permit record and can be input right as it's happening — not when you go back to the office.",
         },
         {
           question: 'What happens when an inspection fails — how do you communicate that and schedule a re-inspection?',
           vpTitle: 'Instant correction notices',
           vpDescription:
-            'GovWell auto-generates a correction notice and queues up the re-inspection automatically.',
+            "The system keeps failed inspections moving with clear correction tracking and an easy path to schedule the reinspection, so issues don't fall through the cracks.",
         },
         {
           question: 'How do you track which permits are close to being finaled vs. stalled?',
-          vpTitle: 'Permit status dashboard',
+          vpTitle: 'Applicant self-serve portal',
           vpDescription:
-            'See exactly where every open permit stands so nothing sits uninspected or unclosed.',
+            "GovWell gives applicants a self-serve portal to check permit and inspection status anytime, which cuts down on 'can you give me an update?' calls.",
         },
       ],
     },
@@ -205,25 +205,25 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'When someone submits an application, how often is stuff missing?',
           vpTitle: 'AutoCheck AI pre-screens submissions',
           vpDescription:
-            'AutoCheck AI reviews applications (and plans) up front and flags missing items before staff ever touch it—so fewer incomplete submissions and less back-and-forth.',
+            'AutoCheck AI reviews applications (and plans) up front and flags missing items before staff ever touch it — so fewer incomplete submissions and less back-and-forth.',
         },
         {
-          question: 'Can you easily customize different application types—like adding fields, changing requirements, or adjusting the format?',
+          question: 'Can you easily customize different application types — like adding fields, changing requirements, or adjusting the format?',
           vpTitle: 'Fully configurable applications',
           vpDescription:
-            'In GovWell, you can edit the fields, rules, and layout for any planning application type—so your forms match your process (not the other way around).',
+            'In GovWell, you can edit the fields, rules, and layout for any planning application type — so your forms match your process (not the other way around).',
         },
         {
           question: 'How often do applicants ask, "Where does my application stand?"',
           vpTitle: 'Self-serve status updates',
           vpDescription:
-            'Applicants can see what stage they\'re in and what\'s next, which cuts down on status calls and emails.',
+            "Applicants can see what stage they're in and what's next, which cuts down on status calls and emails.",
         },
         {
-          question: 'When something is missing or needs resubmittal, how do you track what\'s owed and by when?',
+          question: "When something is missing or needs resubmittal, how do you track what's owed and by when?",
           vpTitle: 'Missing items + deadlines tracking',
           vpDescription:
-            'Track what\'s outstanding and the next due date in one place, so resubmittals don\'t turn into email tag or guesswork.',
+            "Track what's outstanding and the next due date in one place, so resubmittals don't turn into email tag or guesswork.",
         },
       ],
     },
@@ -236,7 +236,7 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'How do you coordinate review across multiple departments?',
           vpTitle: 'Parallel review routing',
           vpDescription:
-            'GovWell sends plans to all relevant departments simultaneously and tracks who\'s done, pending, or has comments.',
+            "GovWell sends plans to all relevant departments simultaneously and tracks who's done, pending, or has comments.",
         },
         {
           question: 'When an applicant resubmits, how do you compare the new version to the old?',
@@ -248,7 +248,7 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
           question: 'How do you communicate markup and comments back to applicants?',
           vpTitle: 'In-portal comment delivery',
           vpDescription:
-            'Applicants receive consolidated reviewer feedback directly in the portal—no email back-and-forth.',
+            'Applicants receive consolidated reviewer feedback directly in the portal — no email back-and-forth.',
         },
         {
           question: 'How many rounds of resubmittal does a typical project go through?',
@@ -270,7 +270,7 @@ export const functionalityData: Record<string, PersonaFocusAreas> = {
             'GovWell pulls application details, review history, and conditions directly into a structured staff report template.',
         },
         {
-          question: 'How do you track conditions of approval and ensure they\'re followed up on?',
+          question: "How do you track conditions of approval and ensure they're followed up on?",
           vpTitle: 'Conditions tracking',
           vpDescription:
             'Every condition is tracked in the system with due dates and responsibility, so nothing slips through post-approval.',
@@ -340,41 +340,217 @@ export const competitorData: Record<string, CompetitorQuestion[]> = {
     },
   ],
 
-  OpenGov: [
+  BSA: [
     {
-      question: 'What happens when you want to make changes to the system?',
+      question: 'Do you feel like BSA is built for permitting and inspection workflows?',
       whatWeHeard:
-        "We've heard changes to forms, workflows, or fees often require going back to OpenGov — you can't do it yourself.",
+        "We've heard that because BSA is primarily a finance program, it doesn't have the functionality that building departments, building officials, planners, and permit techs need.",
       govwellValueProp:
-        "In GovWell, your admin can update fees, forms, letter templates, and workflows without needing to file a support ticket.",
+        "GovWell is built specifically for permitting workflows — everything from submission, to plan review, inspection features, and communication with applicants. Built for purpose for building departments.",
     },
     {
-      question: 'Are you able to do digital plan review in the system?',
+      question: 'How is the BSA online permitting portal working for residents?',
       whatWeHeard:
-        "We've heard digital plan review is either unavailable or requires a separate paid module.",
+        "We've heard it can be quite clunky, even described as 'impenetrable' by residents trying to submit.",
       govwellValueProp:
-        "GovWell includes digital plan review with markup tools natively — no add-on needed.",
+        "GovWell's resident portal is designed to be approachable and clear — guided submissions with AutoCheck AI that catches missing items before applicants hit submit.",
     },
     {
-      question: 'Have you found OpenGov easy to use?',
+      question: 'Do you feel like it\'s easy to use?',
       whatWeHeard:
-        "We've heard there's a learning curve, especially for staff who aren't particularly tech-savvy.",
+        "We've heard it's a lot of clicking, takes too many steps, and doesn't allow you to move easily from area to area when processing.",
       govwellValueProp:
-        "GovWell is built to be intuitive — we hear from customers regularly that new staff get up to speed in days, not weeks.",
+        "GovWell is intuitive and customizable — if you want to adjust it to match how your team works, it's easy to do that.",
     },
     {
-      question: 'Do record types talk to each other?',
+      question: 'Do you still do things by hand?',
       whatWeHeard:
-        "We've heard that permits, inspections, and code enforcement cases can feel siloed — data doesn't automatically flow between them.",
+        "We've heard that BSA doesn't allow you to fully go digital, which ends up making the job harder.",
       govwellValueProp:
-        "GovWell connects permits, inspections, violations, and property history in one unified record so there's no re-keying or switching between modules.",
+        "GovWell has a well-connected front and back end that speak to each other, so you can fully digitize your workflows.",
     },
     {
-      question: 'How does support work?',
+      question: "Do you feel like it's built for planning and zoning?",
       whatWeHeard:
-        "We've heard support can be slow, with responses that redirect to documentation rather than solving the problem directly.",
+        "We've heard that it doesn't work well for planners, or people who do zoning or need to review plan sets.",
       govwellValueProp:
-        "GovWell provides a dedicated deployment strategist plus a support chatbot with under 2-minute response times.",
+        "GovWell has built-in plan review and supports the full planning workflow, including notifications throughout the planning meeting process.",
+    },
+  ],
+
+  CitizenServe: [
+    {
+      question: 'How does user licensing work, especially when other departments, boards, or outside reviewers need access?',
+      whatWeHeard:
+        "We've heard CitizenServe's per-user licensing gets expensive fast, which leads to shared logins or people being left out of the system.",
+      govwellValueProp:
+        "GovWell is designed so you can include everyone who needs to touch the process without the 'we can't afford another seat' problem slowing things down.",
+    },
+    {
+      question: 'How is the public portal experience for residents and contractors?',
+      whatWeHeard:
+        "We've heard CitizenServe's portal can be hard for residents to use, and it can require cumbersome sign-ups and support calls just to submit the right thing.",
+      govwellValueProp:
+        "GovWell gives applicants a modern self-serve portal plus an AI chatbot on the portal to answer common questions in the moment, so fewer applications come in broken.",
+    },
+    {
+      question: 'How are you handling plan review today?',
+      whatWeHeard:
+        "We've heard CitizenServe often forces a download → markup elsewhere → re-upload workflow because plan review tools in the system are limited.",
+      govwellValueProp:
+        "GovWell has integrated electronic plan review, so reviewers can collaborate in the same place and stay on the right version.",
+    },
+    {
+      question: 'When you need reporting on activity, workloads, status, or trends, how easy is it to get what you need?',
+      whatWeHeard:
+        "We've heard CitizenServe reporting can be limited, and some cities have to ask CitizenServe to generate reports for them.",
+      govwellValueProp:
+        "GovWell makes it easy to pull reliable, configurable reports so you can answer 'what's open, what's stuck, what's next' without workarounds.",
+    },
+    {
+      question: 'How does CitizenServe handle integrations with finance systems, GIS, or other city tools?',
+      whatWeHeard:
+        "We've heard CitizenServe can struggle with integrations, leading to manual data transfers between systems.",
+      govwellValueProp:
+        "GovWell is built to be the system of record for these workflows, reducing duplicate entry and keeping everything tied to the record.",
+    },
+    {
+      question: "How's document handling day-to-day — finding things, reviewing things, sharing things?",
+      whatWeHeard:
+        "We've heard CitizenServe can be cumbersome for documents, including having to download files repeatedly, making it harder to stay organized.",
+      govwellValueProp:
+        "GovWell keeps files and communications attached to the record, so staff aren't hunting through email threads or local folders.",
+    },
+  ],
+
+  CloudPermit: [
+    {
+      question: "How's the customer support?",
+      whatWeHeard:
+        "We've heard people get left waiting for months when they have issues.",
+      govwellValueProp:
+        "GovWell has a dedicated deployment strategist and a live customer support portal that responds to questions usually in under 2 minutes.",
+    },
+    {
+      question: 'When you want to change something in the system, are you able to do that easily?',
+      whatWeHeard:
+        "We've heard that CloudPermit isn't very changeable after you set it up, and that you can't easily change things on the backend.",
+      govwellValueProp:
+        "GovWell is far more configurable. If your ordinance changes, or residents keep getting confused by a question on the application, or if you want a different step order or approval path, you can update it yourself and move on.",
+    },
+    {
+      question: "How's billing and invoicing working for you?",
+      whatWeHeard:
+        "We've heard complaints from people who switched over that payment processing for permit applications isn't working well.",
+      govwellValueProp:
+        "GovWell has built-in, proven online payments and clean transaction reporting, so permits don't get held up by payment glitches or messy reconciliation.",
+    },
+    {
+      question: "How's the reporting in CloudPermit?",
+      whatWeHeard:
+        "We've heard that when people try to pull data from CloudPermit it can sometimes be missing crucial information.",
+      govwellValueProp:
+        "GovWell has a reliable reporting feature that can be fully custom configured.",
+    },
+    {
+      question: 'Can you use CloudPermit on the go?',
+      whatWeHeard:
+        "We've heard that CloudPermit doesn't work well on mobile.",
+      govwellValueProp:
+        "GovWell has a mobile app designed with all the features and functionality you need in the field.",
+    },
+  ],
+
+  eTrackit: [
+    {
+      question: "How's customer support been when something breaks or you need help?",
+      whatWeHeard:
+        "We've heard eTrackit / Central Square support can be really unresponsive, with tickets staying open for months.",
+      govwellValueProp:
+        "GovWell has fast, live customer support with a response time of under 2 minutes.",
+    },
+    {
+      question: "Have you lost functionality or been pushed into upgrades or migrations you didn't ask for?",
+      whatWeHeard:
+        "We've heard Central Square has stopped supporting key features — especially the mobile and field app — and pushed cities toward more expensive platforms.",
+      govwellValueProp:
+        "GovWell is a modern platform that keeps improving without taking features away. We also have a continuous deployment model, which means someone is alongside you for the ride.",
+    },
+    {
+      question: "How's the usability for staff and the public?",
+      whatWeHeard:
+        "We've heard the UI can feel outdated and clunky, and painful for both staff and residents to use.",
+      govwellValueProp:
+        "GovWell is designed to be modern and intuitive, which cuts down training time and 'how do I do this?' calls from residents. Plus, we have an AI-powered chatbot called AICA that lives on top of the system to help answer questions.",
+    },
+    {
+      question: 'Do workflows feel streamlined, or is it a lot of clicks and manual cleanup?',
+      whatWeHeard:
+        "We've heard eTrackit workflows can be clunky, with too many steps and staff having to manually fix missing info like address and valuation fields.",
+      govwellValueProp:
+        "GovWell is built to keep work moving through clear steps, with fewer handoffs and less manual chasing.",
+    },
+    {
+      question: 'How well does it connect to the rest of your systems — records, finance, GIS, public records?',
+      whatWeHeard:
+        "We've heard integrations can be fragile, and that updates can break links — forcing manual workarounds and juggling multiple systems.",
+      govwellValueProp:
+        "GovWell is built to be the system of record for the process — everything is present all in one system.",
+    },
+  ],
+
+  GeoCivix: [
+    {
+      question: 'Do residents find it easy to use?',
+      whatWeHeard:
+        "We've heard applicants have to click through a lot of pages, and customers who switched over said they spent a lot of time walking citizens through how to use it.",
+      govwellValueProp:
+        "GovWell gives applicants a guided, modern portal that's easy to navigate from day one — no hand-holding required.",
+    },
+    {
+      question: 'Does it feel modern and intuitive?',
+      whatWeHeard:
+        "We've heard it has a really outdated look and legacy UI.",
+      govwellValueProp:
+        "GovWell is built with a clean, modern interface for both staff and residents — most users get up to speed quickly without extensive training.",
+    },
+  ],
+
+  GeoPermits: [
+    {
+      question: "How's customer support when you need help?",
+      whatWeHeard:
+        "We've heard GeoPermits support can be slow and unresponsive, with tickets feeling like they disappear for weeks or months.",
+      govwellValueProp:
+        "GovWell has fast, live customer support with a response time of under 2 minutes.",
+    },
+    {
+      question: 'When you need to change forms or workflows, can you do it yourself?',
+      whatWeHeard:
+        "We've heard GeoPermits customers can't make simple changes without vendor involvement, which creates delays when ordinances or processes change.",
+      govwellValueProp:
+        "GovWell is far more configurable. If your ordinance changes, or residents keep getting confused by a question on the application, or if you want a different step order or approval path, you can update it yourself and move on.",
+    },
+    {
+      question: 'How do residents and contractors feel about the portal?',
+      whatWeHeard:
+        "We've heard GeoPermits' public portal can be confusing, which drives support calls and incomplete submissions.",
+      govwellValueProp:
+        "GovWell gives applicants a modern self-serve portal plus an AI chatbot on the portal to answer common questions in the moment, so fewer applications come in broken.",
+    },
+    {
+      question: "How's reporting — can you get the data you need without workarounds?",
+      whatWeHeard:
+        "We've heard GeoPermits reporting is limited, and teams end up exporting to Excel and doing manual work.",
+      govwellValueProp:
+        "GovWell has reliable reporting so you can quickly answer what's open, what's stuck, and what's next.",
+    },
+    {
+      question: 'Can inspectors and staff use it effectively in the field?',
+      whatWeHeard:
+        "We've heard GeoPermits is not great on mobile, so staff end up taking notes and entering them back at their desk.",
+      govwellValueProp:
+        "GovWell has a mobile app designed with all the features and functionality you need in the field.",
     },
   ],
 
@@ -413,6 +589,113 @@ export const competitorData: Record<string, CompetitorQuestion[]> = {
         "We've heard onboarding can feel rushed, and ongoing training when features change is limited.",
       govwellValueProp:
         "GovWell provides a dedicated deployment strategist who trains your team on every feature update — not just at launch.",
+    },
+  ],
+
+  MGO: [
+    {
+      question: 'When you need to make changes in the system, how long does it usually take?',
+      whatWeHeard:
+        "We've heard MGO is not very customizable, and changes can take weeks or months.",
+      govwellValueProp:
+        "GovWell is far more configurable. If your ordinance changes, or residents keep getting confused by a question on the application, or if you want a different step order or approval path, you can update it yourself and move on.",
+    },
+    {
+      question: "How's support responsiveness when something breaks or you need help?",
+      whatWeHeard:
+        "We've heard MGO support has declined significantly and can be slow to respond.",
+      govwellValueProp:
+        "GovWell has fast, live customer support with a response time of under 2 minutes.",
+    },
+    {
+      question: "How's reporting — can you pull what you need without it being a headache?",
+      whatWeHeard:
+        "We've heard reporting in MGO can be frustrating and unreliable.",
+      govwellValueProp:
+        "GovWell has reliable, configurable reporting so you can answer basic questions fast without workarounds.",
+    },
+    {
+      question: 'How easy is it to find things in the system — permits, notes, history, attachments?',
+      whatWeHeard:
+        "We've heard MGO can be hard to navigate when you're trying to find specific records.",
+      govwellValueProp:
+        "GovWell is built as a system of record, so everything stays attached to the case and is easy to track down.",
+    },
+    {
+      question: 'How do you handle applicant communication and plan review comments today?',
+      whatWeHeard:
+        "We've heard MGO users end up manually compiling comments and sending them to the applicant — and they really like GovWell's plan review in comparison.",
+      govwellValueProp:
+        "GovWell has built-in plan review, so comments and revisions stay in one place and don't turn into an email scavenger hunt.",
+    },
+  ],
+
+  Municity: [
+    {
+      question: "How often do you find yourself saying 'we need the system to do X'... and it just can't?",
+      whatWeHeard:
+        "We've heard: 'Municity is pretty basic. It doesn't have a lot of the features we need for our operations.'",
+      govwellValueProp:
+        "GovWell is built as a full modern workflow system, so you're not stuck trying to run real processes on top of a basic tool.",
+    },
+    {
+      question: "For staff and applicants, what's the day-to-day experience like? Does the interface feel intuitive, or do people avoid it?",
+      whatWeHeard:
+        "We've heard: 'The interface feels outdated. It's not intuitive for our staff or for residents trying to submit applications.'",
+      govwellValueProp:
+        "GovWell is designed to be modern and straightforward for both staff and the public, which reduces confusion and the 'can you help me submit this?' calls.",
+    },
+    {
+      question: 'When your inspectors are in the field, can they actually get work done on their phone or tablet?',
+      whatWeHeard:
+        "We've heard: 'There's no good mobile solution with Municity. Our inspectors can't work effectively in the field.'",
+      govwellValueProp:
+        "GovWell supports real field work, so inspectors can stay productive without doing everything twice — once in the field and then again back at a desk.",
+    },
+    {
+      question: 'When you need a report for council or management, can you pull it quickly, or does it turn into an Excel project?',
+      whatWeHeard:
+        "We've heard: 'The reporting in Municity doesn't give us what we need. We have to export and manipulate data manually.'",
+      govwellValueProp:
+        "GovWell has reliable, configurable reporting so you can answer 'what's open, what's stuck, and what's next' — no Excel project required.",
+    },
+  ],
+
+  OpenGov: [
+    {
+      question: 'What happens when you want to make changes to the system?',
+      whatWeHeard:
+        "We've heard changes to forms, workflows, or fees often require going back to OpenGov — you can't do it yourself.",
+      govwellValueProp:
+        "In GovWell, your admin can update fees, forms, letter templates, and workflows without needing to file a support ticket.",
+    },
+    {
+      question: 'Are you able to do digital plan review in the system?',
+      whatWeHeard:
+        "We've heard digital plan review is either unavailable or requires a separate paid module.",
+      govwellValueProp:
+        "GovWell includes digital plan review with markup tools natively — no add-on needed.",
+    },
+    {
+      question: 'Have you found OpenGov easy to use?',
+      whatWeHeard:
+        "We've heard there's a learning curve, especially for staff who aren't particularly tech-savvy.",
+      govwellValueProp:
+        "GovWell is built to be intuitive — we hear from customers regularly that new staff get up to speed in days, not weeks.",
+    },
+    {
+      question: 'Do record types talk to each other?',
+      whatWeHeard:
+        "We've heard that permits, inspections, and code enforcement cases can feel siloed — data doesn't automatically flow between them.",
+      govwellValueProp:
+        "GovWell connects permits, inspections, violations, and property history in one unified record so there's no re-keying or switching between modules.",
+    },
+    {
+      question: 'How does support work?',
+      whatWeHeard:
+        "We've heard support can be slow, with responses that redirect to documentation rather than solving the problem directly.",
+      govwellValueProp:
+        "GovWell provides a dedicated deployment strategist plus a support chatbot with under 2-minute response times.",
     },
   ],
 };
@@ -460,5 +743,85 @@ export const objectionData: ObjectionResponse[] = [
       "Totally understandable — switching systems can feel like a big lift.",
       "That's why we provide a dedicated deployment strategist and handle setup/data migration so it's not on your plate.",
     ],
+  },
+];
+
+// ─── VALUE PROP HOT BAR DATA ───────────────────────────────────────────────
+
+export const valuePropData: ValuePropItem[] = [
+  {
+    buttonLabel: 'Customer service',
+    popupTitle: 'Customer service',
+    description: 'If something breaks or you have a question, you get live support fast. Most teams get a response in under 2 minutes.',
+  },
+  {
+    buttonLabel: 'AICA',
+    popupTitle: 'AICA — AI chatbot on the public portal',
+    description: "Residents can ask questions right on the portal, like 'How do I build a shed?' and get clear answers before they submit.",
+  },
+  {
+    buttonLabel: 'Plan review',
+    popupTitle: 'Built-in plan review',
+    description: 'Reviewers can mark up and collaborate in one place, without the download-and-reupload mess.',
+  },
+  {
+    buttonLabel: 'AutoCheck',
+    popupTitle: 'AutoCheck — catch issues before submission',
+    description: 'AutoCheck flags missing items and likely issues up front, so fewer applications come in broken.',
+  },
+  {
+    buttonLabel: 'Custom reports',
+    popupTitle: 'Customizable, reliable reports',
+    description: "You can pull the reports you need without exporting to spreadsheets or asking the vendor to do it.",
+  },
+  {
+    buttonLabel: 'Integrations',
+    popupTitle: 'Integrations — plays nice with your stack',
+    description: "GovWell connects with the tools you already use, so you can modernize without getting locked into one vendor.",
+  },
+  {
+    buttonLabel: 'Complex approvals',
+    popupTitle: 'Handles complex approval processes',
+    description: "It supports multi-reviewer, non-linear workflows. You can see who's holding things up and keep approvals moving.",
+  },
+  {
+    buttonLabel: 'System of record',
+    popupTitle: 'One place for everything — system of record',
+    description: "Everything stays attached to the case, so nothing gets lost in email.",
+  },
+  {
+    buttonLabel: 'Plan versioning',
+    popupTitle: 'Version control + plan comparisons',
+    description: "You can compare plan versions and see what changed, so staff always knows what's current.",
+  },
+  {
+    buttonLabel: 'Applicant self-serve',
+    popupTitle: 'Applicant self-serve status updates',
+    description: "Applicants can check status anytime, which cuts down on 'can you give me an update?' calls.",
+  },
+  {
+    buttonLabel: 'Mobile app',
+    popupTitle: 'Mobile field app',
+    description: "Inspectors can capture notes and photos in the field, and it's immediately on the record.",
+  },
+  {
+    buttonLabel: 'Inspection scheduling',
+    popupTitle: 'Inspection scheduling + calendar sync',
+    description: "Scheduling is simple, and appointments can sync to calendars so people aren't double-booking or chasing updates.",
+  },
+  {
+    buttonLabel: 'Correction tracking',
+    popupTitle: 'Correction + reinspection tracking',
+    description: "Failed inspections don't fall through the cracks. The system guides corrections and reinspections.",
+  },
+  {
+    buttonLabel: 'Online payments',
+    popupTitle: 'Built-in online payments + clean transaction reporting',
+    description: "Payments are built in, and reporting is clean, so you're not untangling payment issues later.",
+  },
+  {
+    buttonLabel: 'Self-serve config',
+    popupTitle: 'Self-serve configurability',
+    description: "If your ordinance changes or a form question is confusing, you can update wording and workflow yourself without a vendor ticket.",
   },
 ];

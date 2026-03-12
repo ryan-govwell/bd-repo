@@ -1,7 +1,18 @@
 export type Persona = 'Building Official' | 'Code Enforcement Officer' | 'Planner';
 export type PainPathway = 'Functionality Pain' | 'Competitor Pain';
 export type FocusArea = 'PP1' | 'PP2' | 'PP3';
-export type Competitor = 'Accela' | 'OpenGov' | 'iWorq';
+export type Competitor =
+  | 'Accela'
+  | 'BSA'
+  | 'CitizenServe'
+  | 'CloudPermit'
+  | 'eTrackit'
+  | 'GeoCivix'
+  | 'GeoPermits'
+  | 'iWorq'
+  | 'MGO'
+  | 'Municity'
+  | 'OpenGov';
 
 export interface QVPPair {
   question: string;
@@ -31,4 +42,10 @@ export interface CompetitorQuestion {
 export interface ObjectionResponse {
   label: string;
   lines: string[];
+}
+
+export interface ValuePropItem {
+  buttonLabel: string;
+  popupTitle: string;
+  description: string;
 }

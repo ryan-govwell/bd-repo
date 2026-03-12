@@ -7,24 +7,17 @@ interface CompetitorDiscoveryProps {
 }
 
 const COMPETITOR_THEME: Record<Competitor, { headerBg: string; headerText: string; infoBg: string; infoText: string }> = {
-  Accela: {
-    headerBg: '#2471A3',
-    headerText: '#fff',
-    infoBg: '#EBF5FB',
-    infoText: '#1A5276',
-  },
-  OpenGov: {
-    headerBg: '#2471A3',
-    headerText: '#fff',
-    infoBg: '#EBF5FB',
-    infoText: '#1A5276',
-  },
-  iWorq: {
-    headerBg: '#7D3C98',
-    headerText: '#fff',
-    infoBg: '#F5EEF8',
-    infoText: '#6C3483',
-  },
+  Accela:       { headerBg: '#2471A3', headerText: '#fff', infoBg: '#EBF5FB', infoText: '#1A5276' },
+  BSA:          { headerBg: '#0E7490', headerText: '#fff', infoBg: '#ECFEFF', infoText: '#164E63' },
+  CitizenServe: { headerBg: '#C2410C', headerText: '#fff', infoBg: '#FFF7ED', infoText: '#7C2D12' },
+  CloudPermit:  { headerBg: '#1D4ED8', headerText: '#fff', infoBg: '#EFF6FF', infoText: '#1E3A8A' },
+  eTrackit:     { headerBg: '#991B1B', headerText: '#fff', infoBg: '#FEF2F2', infoText: '#7F1D1D' },
+  GeoCivix:     { headerBg: '#374151', headerText: '#fff', infoBg: '#F9FAFB', infoText: '#1F2937' },
+  GeoPermits:   { headerBg: '#166534', headerText: '#fff', infoBg: '#F0FDF4', infoText: '#14532D' },
+  iWorq:        { headerBg: '#7D3C98', headerText: '#fff', infoBg: '#F5EEF8', infoText: '#6C3483' },
+  MGO:          { headerBg: '#92400E', headerText: '#fff', infoBg: '#FFFBEB', infoText: '#78350F' },
+  Municity:     { headerBg: '#1E3A5F', headerText: '#fff', infoBg: '#F0F9FF', infoText: '#1E3A5F' },
+  OpenGov:      { headerBg: '#2471A3', headerText: '#fff', infoBg: '#EBF5FB', infoText: '#1A5276' },
 };
 
 export default function CompetitorDiscovery({ competitor }: CompetitorDiscoveryProps) {
@@ -71,7 +64,6 @@ export default function CompetitorDiscovery({ competitor }: CompetitorDiscoveryP
 
               {isOpen && (
                 <div className="px-4 pb-4 flex flex-col gap-3">
-                  {/* What we've heard */}
                   <div>
                     <p
                       style={{ color: '#9CA3AF', letterSpacing: '0.08em' }}
@@ -83,8 +75,6 @@ export default function CompetitorDiscovery({ competitor }: CompetitorDiscoveryP
                       {q.whatWeHeard}
                     </p>
                   </div>
-
-                  {/* GovWell value prop */}
                   <div>
                     <p
                       style={{ color: '#27AE60', letterSpacing: '0.08em' }}

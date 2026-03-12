@@ -1,11 +1,32 @@
 import type { PainPathway, Competitor } from '../types';
 
-const COMPETITORS: Competitor[] = ['Accela', 'OpenGov', 'iWorq'];
+// Alphabetized
+const COMPETITORS: Competitor[] = [
+  'Accela',
+  'BSA',
+  'CitizenServe',
+  'CloudPermit',
+  'eTrackit',
+  'GeoCivix',
+  'GeoPermits',
+  'iWorq',
+  'MGO',
+  'Municity',
+  'OpenGov',
+];
 
 const COMPETITOR_COLORS: Record<Competitor, { active: string; border: string }> = {
-  Accela: { active: '#2471A3', border: '#2980B9' },
-  OpenGov: { active: '#2471A3', border: '#2980B9' },
-  iWorq: { active: '#7D3C98', border: '#8E44AD' },
+  Accela:       { active: '#2471A3', border: '#2980B9' },
+  BSA:          { active: '#0E7490', border: '#0891B2' },
+  CitizenServe: { active: '#C2410C', border: '#EA580C' },
+  CloudPermit:  { active: '#1D4ED8', border: '#2563EB' },
+  eTrackit:     { active: '#991B1B', border: '#DC2626' },
+  GeoCivix:     { active: '#374151', border: '#6B7280' },
+  GeoPermits:   { active: '#166534', border: '#16A34A' },
+  iWorq:        { active: '#7D3C98', border: '#8E44AD' },
+  MGO:          { active: '#92400E', border: '#B45309' },
+  Municity:     { active: '#1E3A5F', border: '#1D4ED8' },
+  OpenGov:      { active: '#2471A3', border: '#2980B9' },
 };
 
 interface PainPathwaySelectorProps {
