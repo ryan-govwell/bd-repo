@@ -110,11 +110,13 @@ export default function App() {
     <div style={{ backgroundColor: '#FDF2F1', minHeight: '100vh' }}>
       <Header onReset={handleReset} />
 
-      {/* Main content — narrower bottom padding on sidebar layout */}
+      {/* Main content — on wide layout, offset by sidebar widths instead of centering in full viewport */}
       <div
-        className="mx-auto px-4"
+        className="px-6"
         style={{
-          maxWidth: '660px',
+          marginLeft: isSidebarLayout ? 192 : 'auto',
+          marginRight: isSidebarLayout ? 192 : 'auto',
+          maxWidth: isSidebarLayout ? 'none' : '660px',
           paddingTop: '64px',
           paddingBottom: isSidebarLayout ? '40px' : '260px',
         }}
