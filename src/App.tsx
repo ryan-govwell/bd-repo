@@ -12,7 +12,11 @@ import QuestionsAndValueProps from './components/QuestionsAndValueProps';
 import CompetitorDiscovery from './components/CompetitorDiscovery';
 import ValuePropHotBar from './components/ValuePropHotBar';
 import ObjectionHotBar from './components/ObjectionHotBar';
+import SidebarHotBars from './components/SidebarHotBars';
 import { functionalityData, objectionData, valuePropData } from './data';
+
+// Sidebar layout kicks in when there's enough room for both 192px sidebars + 660px content
+const SIDEBAR_BREAKPOINT = 1100;
 
 export default function App() {
   const [unlocked, setUnlocked] = useState(() => localStorage.getItem('gwcb_auth') === '1');
@@ -22,10 +26,19 @@ export default function App() {
   const [selectedCompetitor, setSelectedCompetitor] = useState<Competitor | null>(null);
   const [activeObjection, setActiveObjection] = useState<string | null>(null);
   const [activeValueProp, setActiveValueProp] = useState<string | null>(null);
+  const [isSidebarLayout, setIsSidebarLayout] = useState(() => window.innerWidth >= SIDEBAR_BREAKPOINT);
   const bottomBarsRef = useRef<HTMLDivElement>(null);
 
-  // Close popups when clicking outside the bottom bar container
+  // Track screen width for layout switching
   useEffect(() => {
+    const handler = () => setIsSidebarLayout(window.innerWidth >= SIDEBAR_BREAKPOINT);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+
+  // Close bottom-bar popups when clicking outside (narrow layout only)
+  useEffect(() => {
+    if (isSidebarLayout) return;
     function handleClick(e: MouseEvent) {
       if (bottomBarsRef.current && !bottomBarsRef.current.contains(e.target as Node)) {
         setActiveObjection(null);
@@ -34,9 +47,9 @@ export default function App() {
     }
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
-  }, []);
+  }, [isSidebarLayout]);
 
-  // Derive active popup content
+  // Bottom-bar popup content (narrow layout)
   const activePopup = useMemo(() => {
     if (activeObjection) {
       const obj = objectionData.find((o) => o.label === activeObjection);
@@ -97,10 +110,14 @@ export default function App() {
     <div style={{ backgroundColor: '#FDF2F1', minHeight: '100vh' }}>
       <Header onReset={handleReset} />
 
-      {/* Scrollable main content */}
+      {/* Main content — narrower bottom padding on sidebar layout */}
       <div
         className="mx-auto px-4"
-        style={{ maxWidth: '660px', paddingTop: '64px', paddingBottom: '260px' }}
+        style={{
+          maxWidth: '660px',
+          paddingTop: '64px',
+          paddingBottom: isSidebarLayout ? '40px' : '260px',
+        }}
       >
         <BreadcrumbBar
           persona={selectedPersona}
@@ -142,39 +159,45 @@ export default function App() {
         </div>
       </div>
 
-      {/* Fixed bottom bars container */}
-      <div
-        ref={bottomBarsRef}
-        style={{ borderTop: '2px solid #C0392B' }}
-        className="fixed bottom-0 left-0 right-0 z-50 bg-white"
-      >
-        {/* Shared popup — renders above the bars */}
-        {activePopup && (
-          <div
-            style={{
-              border: '1px solid #E8E0E0',
-              bottom: '100%',
-              marginBottom: '6px',
-            }}
-            className="absolute left-4 right-4 bg-white rounded-lg px-4 py-3 shadow-lg"
-          >
-            <p
-              style={{ color: activePopup.type === 'objection' ? '#C0392B' : '#1E6E43' }}
-              className="text-xs font-bold uppercase tracking-wide mb-2"
-            >
-              {activePopup.title}
-            </p>
-            {activePopup.lines.map((line, i) => (
-              <p key={i} className="text-sm text-gray-700 leading-relaxed">
-                {line}
-              </p>
-            ))}
-          </div>
-        )}
+      {/* ── Wide layout: left/right sidebars ── */}
+      {isSidebarLayout && (
+        <SidebarHotBars
+          activeObjection={activeObjection}
+          activeValueProp={activeValueProp}
+          onObjectionToggle={handleObjectionToggle}
+          onValuePropToggle={handleValuePropToggle}
+        />
+      )}
 
-        <ValuePropHotBar activeVP={activeValueProp} onToggle={handleValuePropToggle} />
-        <ObjectionHotBar activeObjection={activeObjection} onToggle={handleObjectionToggle} />
-      </div>
+      {/* ── Narrow layout: stacked bottom bars ── */}
+      {!isSidebarLayout && (
+        <div
+          ref={bottomBarsRef}
+          style={{ borderTop: '2px solid #C0392B' }}
+          className="fixed bottom-0 left-0 right-0 z-50 bg-white"
+        >
+          {activePopup && (
+            <div
+              style={{ border: '1px solid #E8E0E0', bottom: '100%', marginBottom: '6px' }}
+              className="absolute left-4 right-4 bg-white rounded-lg px-4 py-3 shadow-lg"
+            >
+              <p
+                style={{ color: activePopup.type === 'objection' ? '#C0392B' : '#1E6E43' }}
+                className="text-xs font-bold uppercase tracking-wide mb-2"
+              >
+                {activePopup.title}
+              </p>
+              {activePopup.lines.map((line, i) => (
+                <p key={i} className="text-sm text-gray-700 leading-relaxed">
+                  {line}
+                </p>
+              ))}
+            </div>
+          )}
+          <ValuePropHotBar activeVP={activeValueProp} onToggle={handleValuePropToggle} />
+          <ObjectionHotBar activeObjection={activeObjection} onToggle={handleObjectionToggle} />
+        </div>
+      )}
     </div>
   );
 }
