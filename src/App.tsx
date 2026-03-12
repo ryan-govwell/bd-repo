@@ -16,7 +16,7 @@ import SidebarHotBars from './components/SidebarHotBars';
 import { functionalityData, objectionData, valuePropData } from './data';
 
 // Sidebar layout kicks in when there's enough room for both 192px sidebars + 660px content
-const SIDEBAR_BREAKPOINT = 1100;
+const SIDEBAR_BREAKPOINT = 1200;
 
 export default function App() {
   const [unlocked, setUnlocked] = useState(() => localStorage.getItem('gwcb_auth') === '1');
@@ -110,13 +110,11 @@ export default function App() {
     <div style={{ backgroundColor: '#FDF2F1', minHeight: '100vh' }}>
       <Header onReset={handleReset} />
 
-      {/* Main content — on wide layout, offset by sidebar widths instead of centering in full viewport */}
+      {/* Main content */}
       <div
-        className="px-6"
+        className="mx-auto px-4"
         style={{
-          marginLeft: isSidebarLayout ? 192 : 'auto',
-          marginRight: isSidebarLayout ? 192 : 'auto',
-          maxWidth: isSidebarLayout ? 'none' : '660px',
+          maxWidth: '660px',
           paddingTop: '64px',
           paddingBottom: isSidebarLayout ? '40px' : '260px',
         }}
