@@ -744,6 +744,13 @@ export const objectionData: ObjectionResponse[] = [
       "That's why we provide a dedicated deployment strategist and handle setup/data migration so it's not on your plate.",
     ],
   },
+  {
+    label: "We'll need to do an RFP",
+    lines: [
+      "Totally makes sense.",
+      "We usually like to connect before an RFP goes out — just to ask a few questions and make sure we're a good fit. That way if we do submit, it's actually tailored to what you need.",
+    ],
+  },
 ];
 
 // ─── VALUE PROP HOT BAR DATA ───────────────────────────────────────────────
