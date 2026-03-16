@@ -750,7 +750,7 @@ export const competitorData: Record<string, CompetitorQuestion[]> = {
       whatWeHeard:
         "We've heard digital plan review is either unavailable or requires a separate paid module.",
       govwellValueProp:
-        "GovWell includes digital plan review with markup tools natively — no add-on needed.",
+        "GovWell includes digital plan review with markup tools natively — no add-on needed. We also offer AI AutoCheck, which automatically identifies problems in plan sets and flags them to both residents and staff before review even begins.",
     },
     {
       question: 'Have you found OpenGov easy to use?',
