@@ -12,7 +12,9 @@ export type Competitor =
   | 'iWorq'
   | 'MGO'
   | 'Municity'
-  | 'OpenGov';
+  | 'Munis'
+  | 'OpenGov'
+  | 'TylerEnerGov';
 
 export interface QVPPair {
   question: string;

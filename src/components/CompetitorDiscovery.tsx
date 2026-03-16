@@ -17,7 +17,9 @@ const COMPETITOR_THEME: Record<Competitor, { headerBg: string; headerText: strin
   iWorq:        { headerBg: '#7D3C98', headerText: '#fff', infoBg: '#F5EEF8', infoText: '#6C3483' },
   MGO:          { headerBg: '#92400E', headerText: '#fff', infoBg: '#FFFBEB', infoText: '#78350F' },
   Municity:     { headerBg: '#1E3A5F', headerText: '#fff', infoBg: '#F0F9FF', infoText: '#1E3A5F' },
+  Munis:        { headerBg: '#065F46', headerText: '#fff', infoBg: '#F0FDF4', infoText: '#064E3B' },
   OpenGov:      { headerBg: '#2471A3', headerText: '#fff', infoBg: '#EBF5FB', infoText: '#1A5276' },
+  TylerEnerGov: { headerBg: '#7C2D12', headerText: '#fff', infoBg: '#FFF7ED', infoText: '#7C2D12' },
 };
 
 export default function CompetitorDiscovery({ competitor }: CompetitorDiscoveryProps) {

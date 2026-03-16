@@ -12,7 +12,9 @@ const COMPETITORS: Competitor[] = [
   'iWorq',
   'MGO',
   'Municity',
+  'Munis',
   'OpenGov',
+  'TylerEnerGov',
 ];
 
 const COMPETITOR_COLORS: Record<Competitor, { active: string; border: string }> = {
@@ -26,7 +28,9 @@ const COMPETITOR_COLORS: Record<Competitor, { active: string; border: string }> 
   iWorq:        { active: '#7D3C98', border: '#8E44AD' },
   MGO:          { active: '#92400E', border: '#B45309' },
   Municity:     { active: '#1E3A5F', border: '#1D4ED8' },
+  Munis:        { active: '#065F46', border: '#059669' },
   OpenGov:      { active: '#2471A3', border: '#2980B9' },
+  TylerEnerGov: { active: '#7C2D12', border: '#EA580C' },
 };
 
 interface PainPathwaySelectorProps {
