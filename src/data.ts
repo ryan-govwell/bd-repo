@@ -661,6 +661,82 @@ export const competitorData: Record<string, CompetitorQuestion[]> = {
     },
   ],
 
+  Munis: [
+    {
+      question: 'How well does Munis integrate with the other systems you rely on?',
+      whatWeHeard:
+        "We've heard Munis is a closed ecosystem with limited third-party integration, forcing manual CSV exports/imports and extra reconciliation work.",
+      govwellValueProp:
+        "GovWell works with the other tools your city already uses, so you don't get boxed into one vendor.",
+    },
+    {
+      question: "Do you feel like you're 'stuck' with Munis because finance chose it?",
+      whatWeHeard:
+        "We've heard departments get locked in because finance wants to stay on Munis, even if other teams feel it's holding them back.",
+      govwellValueProp:
+        "GovWell works with finance realities and helps teams move forward without creating a civil war between departments.",
+    },
+    {
+      question: "How's reporting in Munis when you need audit-ready answers?",
+      whatWeHeard:
+        "We've heard some teams say Munis reports are inaccurate or hard to trust, which drives duplicate tracking in spreadsheets.",
+      govwellValueProp:
+        "GovWell gives clean, exportable transaction and activity reporting so you're not maintaining multiple 'shadow books.'",
+    },
+    {
+      question: 'If you ever needed to migrate or pull your data out, how confident do you feel?',
+      whatWeHeard:
+        "We've heard data migration out of Munis feels uncertain and painful, and teams worry about what will or won't come over.",
+      govwellValueProp:
+        "GovWell takes a migration-first approach with structured data and a clear path to get information in (and out) without drama.",
+    },
+    {
+      question: "How's the user experience for people outside finance who have to touch Munis?",
+      whatWeHeard:
+        "We've heard Munis is described as clunky and frustrating for non-finance users, with an older UI style.",
+      govwellValueProp:
+        "GovWell is built for purpose for building officials and plan tech reviewers, so cross-department staff can use it without needing a finance background.",
+    },
+  ],
+
+  TylerEnerGov: [
+    {
+      question: 'When you need to change something in your process, can your team make that change yourselves?',
+      whatWeHeard:
+        "We've heard EnerGov teams feel locked into configurations and have to burn staff time going back-and-forth with Tyler for adjustments they cannot self-serve.",
+      govwellValueProp:
+        "GovWell is built for self-serve configurability, so staff can update forms, workflows, and messaging without waiting on a vendor queue.",
+    },
+    {
+      question: 'How did implementation go, and did you actually get fully live on the timeline you expected?',
+      whatWeHeard:
+        "We've heard cities spend years trying to implement EnerGov, with changing project managers and long delays, and some never feel confident going live.",
+      govwellValueProp:
+        "GovWell is designed to get you live faster with a clearer, more hands-on rollout, so you're not stuck in 'test mode' forever.",
+    },
+    {
+      question: "How's the day-to-day user experience for staff, especially for simple tasks?",
+      whatWeHeard:
+        "We've heard EnerGov is described as clunky and not intuitive, with an 'older system' feel.",
+      govwellValueProp:
+        "GovWell focuses on modern, straightforward workflows so common actions take fewer steps and new staff ramp faster.",
+    },
+    {
+      question: "How's reporting and pulling the data you need for leadership and the public?",
+      whatWeHeard:
+        "We've heard reporting is clunky and staff can't easily pull the exact data they want without preset searches or exports.",
+      govwellValueProp:
+        "GovWell provides built-in, flexible reporting so teams can answer 'what's happening in our pipeline' without living in Excel.",
+    },
+    {
+      question: 'Do different departments (building, planning, code, finance) feel connected in the system?',
+      whatWeHeard:
+        "We've heard EnerGov modules can feel siloed, and information doesn't flow cleanly across departments.",
+      govwellValueProp:
+        "GovWell is designed as one connected platform, so statuses, payments, and records stay aligned across teams.",
+    },
+  ],
+
   OpenGov: [
     {
       question: 'What happens when you want to make changes to the system?',
